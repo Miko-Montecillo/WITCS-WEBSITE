@@ -1,0 +1,310 @@
+/* change all container sizes to % */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    color: white;
+    background-color: black;
+    overflow: hidden;
+}
+
+.main {
+    min-height: 100vh;
+    background: url("MobileStart.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    pointer-events: auto;
+    transition: .3s ease;
+}
+
+.main.active{
+    filter: blur(15px);
+    pointer-events: none;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: bige;
+}
+
+.home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-content .start-button{
+    width: 60%;
+    height: 9%;
+    position:absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity:0;
+}
+
+.popup-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 75%;
+    background-color: white;
+    border-radius: 6px;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.popup-info.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-info h1{
+    font-size: 1.7rem;
+    color: hotpink;
+}
+
+.popup-info .instructions{
+    display: inline-block;
+    font-size: 1rem;
+    margin: 5px 0;
+    color: black;
+    padding-bottom: 5px;
+}
+
+.popup-info .btn-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+
+.popup-info .btn-group .info-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 5vh;
+    background-color: hotpink;
+    outline: non;
+    border: 2px solid hotpink;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    transition: .5s;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1){
+    background: transparent;
+    color: hotpink;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1):hover{
+    background: hotpink;
+    color: white;
+}
+
+.popup-info .btn-group .info-btn:nth-child(2):hover{
+    background-color: #950170;
+    border-color: #950170;
+}
+
+.quiz-section{
+    position: relative;
+    left: -100%;
+    width: 1000000%;
+    background-color: pink;
+    transition: .2s ease-in-out;
+    transition-delay: 0;
+    z-index: 100;
+    min-height: 100vh;
+    background: url("QuizMobile.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-section.active{
+    left: 0;
+}
+
+.quiz-section .quiz-box{
+    position: relative;
+    width: 90%;
+    background: white;
+    color: black;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+    transition: 0.1s ease;
+    transition-delay: 0s;
+}
+
+.quiz-section .quiz-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 0.2s ease;
+    transition-delay: 0s;
+}
+
+.quiz-box .quiz-header {
+    display: flex;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: hotpink;
+    justify-content: center;
+}
+
+.quiz-box .question-text{
+    font-size: 0.9rem;
+    padding: 10px 0;
+    font-weight: 600;
+    border-top: 2px solid gray;
+}
+
+.option-list .option{
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, .2);
+    font-size: 0.8rem;
+    margin: 3px;
+}
+
+.option-list .option.clicked{
+        border: 2px solid hotpink;
+        background-color: pink;
+        color: white;
+}
+
+.option-list .option.disabled{
+    pointer-events: none;
+}
+
+.quiz-box .quiz-footer{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.quiz-footer .next-btn{
+    width: 60px;
+    height: 30px;
+    background-color: gray;
+    border: 2px solid black;
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+    outline: none;
+    border-radius: 6px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.quiz-footer .next-btn.active {
+    pointer-events: auto;
+    background-color: hotpink;
+    border-color: palevioletred;
+    color: white;
+}
+
+.quiz-section .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 75%;
+    color: black;
+    background-color: white;
+    border: 2px solid palevioletred;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.quiz-section .result-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box h2{
+    font-size: 2rem;
+    color: hotpink;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+}
+
+.result-box .percentage-container{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0 20px;
+}
+
+.percentage-container .score-text{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.percentage-container .course-result{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.buttons button{
+    width: 130px;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: hotpink;
+    border: 1px solid palevioletred;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
