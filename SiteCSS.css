@@ -145,7 +145,7 @@ body{
     z-index: 100;
     min-height: 100vh;
     background: url("QuizMobile.png") no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     pointer-events: auto;
     display: flex;
