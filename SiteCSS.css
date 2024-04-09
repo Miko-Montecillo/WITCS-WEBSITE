@@ -109,6 +109,7 @@ body{
     align-items: center;
     width: 35%;
     height: 5vh;
+    font-size: 0.7rem;
     background-color: hotpink;
     outline: non;
     border: 2px solid hotpink;
