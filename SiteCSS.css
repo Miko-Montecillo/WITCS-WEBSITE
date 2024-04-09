@@ -16,7 +16,7 @@ body{
 .main {
     min-height: 100vh;
     background: url("MobileStart.png") no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     pointer-events: auto;
     transition: .3s ease;
